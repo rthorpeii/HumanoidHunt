@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-var puzzleInput = "./android/testInput.txt"
+var puzzleInput = "./android/input.txt"
 
 // Solve the puzzle
 func Solve() string {
