@@ -18,7 +18,7 @@ func Solve() string {
 	return password
 }
 
-// frequencyMap creates a map of runes to how many times they appear seen in the string
+// frequencyMap creates a map of runes to how many times they appear in the string
 func frequencyMap(signal string) map[rune]int {
 	frequency := make(map[rune]int)
 	for _, char := range signal {
