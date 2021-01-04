@@ -15,10 +15,11 @@ func Solve() string {
 	for _, value := range rawInput {
 		password += string(findInvalid(value))
 	}
-
 	return password
 }
 
+// findInvalid returns the character represented by the first invalid byte
+// following a sequence of valid bytes in the stream
 func findInvalid(stream string) rune {
 	numBytes := len(stream) / 8
 	byteOffset := 0
@@ -37,6 +38,6 @@ func findInvalid(stream string) rune {
 		}
 		byteOffset++
 	}
-	log.Fatal("Should not have reached here")
+	log.Fatal("No character found")
 	return rune(0)
 }

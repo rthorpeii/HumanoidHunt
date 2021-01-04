@@ -18,6 +18,16 @@ func Solve() string {
 	return password
 }
 
+// frequencyMap creates a map of runes to how many times they appear seen in the string
+func frequencyMap(signal string) map[rune]int {
+	frequency := make(map[rune]int)
+	for _, char := range signal {
+		frequency[char]++
+	}
+	return frequency
+}
+
+// mostFrequent takes a frequency map and determines the most frequently seen rune
 func mostFrequent(frequency map[rune]int) rune {
 	var maxChar rune
 	maxFrequency := 0
@@ -31,14 +41,8 @@ func mostFrequent(frequency map[rune]int) rune {
 	return maxChar
 }
 
-func frequencyMap(signal string) map[rune]int {
-	frequency := make(map[rune]int)
-	for _, char := range signal {
-		frequency[char]++
-	}
-	return frequency
-}
-
+// frequencyAfterTarget creates a map of runes to how many times they appear in the string
+// immediately following the target rune
 func frequencyAfterTarget(signal string, target rune) map[rune]int {
 	frequency := make(map[rune]int)
 	for i := 0; i < len(signal)-1; i++ {
